@@ -23,6 +23,14 @@ function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setFormValues(validate(formValues))
+    }
+
+    const validate = (values) => {
+        const errors = {}
+            if(!values.username) {
+                errors.username = "Please input your username"
+        }
     }
 
     return (
