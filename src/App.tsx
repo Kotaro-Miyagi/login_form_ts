@@ -13,23 +13,23 @@ function App() {
         mailAddress: "",
         password: ""
     }
-    const [formValues, setFormValues] = useState<FormValues>()
+    const [formValues, setFormValues] = useState<FormValues | undefined>(initialValues)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value} = e.target
-        setFormValues({ ...formValues, [name]: value })
+        const {name, value} = e.target
+        setFormValues({ ...formValues, [name]: value });
         console.log(formValues)
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault()
     }
 
     return (
         <div className="formContainer">
             <form onSubmit={(e) => handleSubmit(e)}>
                 <h1>Login Form</h1>
-                <hr />
+                <hr/>
                 <div className="uiForm">
                     <div className="formField">
                         <label>User Name</label>
@@ -41,7 +41,8 @@ function App() {
                     </div>
                     <div className="formField">
                         <label>Password</label>
-                        <input type="password" placeholder="password" name="password" onChange={(e) => handleChange(e)}/>
+                        <input type="password" placeholder="password" name="password"
+                               onChange={(e) => handleChange(e)}/>
                     </div>
                     <button className="submitButton">Login</button>
                 </div>
