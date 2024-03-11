@@ -21,9 +21,13 @@ function App() {
         console.log(formValues)
     }
 
+    const handleSubmit = () => {
+
+    }
+
     return (
         <div className="formContainer">
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <h1>Login Form</h1>
                 <hr />
                 <div className="uiForm">
