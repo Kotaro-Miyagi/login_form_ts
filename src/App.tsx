@@ -26,14 +26,6 @@ function App() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        // const errors = validate(formValues)
-        // if (Object.keys(errors).length === 0) {
-        //     console.log("Form is valid. Submitting...")
-        //     // Add your form submission logic here
-        // } else　 {
-        //     console.error("Form validation failed:", errors)
-        //     setFormErrors(errors)
-        // }　
         setFormErrors(validate(formValues))
         setIsSubmit(true)
     }
